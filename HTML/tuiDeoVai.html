@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SP2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Luxurious+Script&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      background-color: #428a8e;
+      color: #f2f1d6;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* .container{
+            width: 2000px;
+            display: flex;
+            min-height: 1000px;
+            margin: 0px; 
+        } */
+    .header {
+      height: 65px;
+      display: flex;
+      padding-left: 25px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #000;
+    }
+
+    .action {
+      width: 35%;
+      display: flex;
+      padding-right: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon_submit {
+      outline: none;
+      border: 0;
+    }
+
+    .header input {
+      position: relative;
+      left: 29px;
+      top: -2px;
+    }
+
+    .icon_submit img {
+      width: 37px;
+      position: relative;
+      left: -35px;
+      top: -5px;
+      cursor: pointer;
+    }
+
+    input[type="text"]::placeholder {
+      padding-left: 15px;
+      color: #f2f1d6;
+    }
+
+    .menu,
+    .tittle {
+      background-color: #1c7075;
+      padding: 10px;
+      border-bottom: 3px solid black;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .menu a {
+      color: #f2f1d6;
+      display: flex;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 21px;
+      text-decoration: none;
+      padding: 0 15px;
+      display: inline-block;
+    }
+
+
+    .menu a:hover {
+      color: #c9b86d;
+    }
+
+    .dropdown {
+      position: relative;
+      background-color: transparent;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #317d7f;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      min-width: 160px;
+      z-index: 1;
+
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3d8c8f;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .body h1 {
+      display: flex;
+      font-family: 'Luxurious Script', cursive;
+      padding: 25px;
+      align-items: center;
+      margin: auto;
+      font-weight: 500;
+      font-size: 70px;
+      justify-content: center;
+    }
+
+
+    .product-card {
+      border-radius: 30px;
+      border: none;
+      margin-bottom: 5px;
+    }
+
+    .product-image {
+      height: 275px;
+      display: flex;
+      border-radius: 30px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .default-image {
+      display: block;
+      width: 100%;
+      width: 85%;
+      height: 195px;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-image {
+      width: 85%;
+      height: 195px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+    }
+
+    .product-card:hover .default-image {
+      opacity: 0;
+    }
+
+    .product-card:hover .hover-image {
+      opacity: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      background-color: #d2c8c0;
+      width: 90%;
+      border-radius: 30px !important;
+      align-items: center;
+      justify-content: center;
+      color: #737373;
+      margin: 0px 0px 10px 15px;
+    }
+
+    .footer {
+      color: #f2f1d6;
+      border-top: 3px solid black;
+      padding: 20px 10px;
+    }
+
+    .footer a {
+      color: #f2f1d6;
+      text-decoration: none;
+    }
+
+    .product-card {
+      background-color: #1c7075;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      margin: 10px 0;
+      background-color: transparent;
+    }
+
+    .product-description {
+      color: #f2f1d6;
+      background-color: transparent !important;
+      font-size: 16px;
+      margin: 5px 0;
+      font-weight: 500;
+    }
+
+    .product-price {
+      font-size: 18px;
+      color: #f2f1d6;
+      background-color: transparent !important;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      background-color: #D8C3B6;
+      padding: 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .action-button {
+      color: #737373;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    .action-button:hover {
+      color: #333;
+    }
+
+    .separator {
+      background-color: transparent;
+      color: #737373;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+
+    .img-fluid {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="container"> -->
+  <div class="header">
+    <div class="h-img"><a href="../HTML/index.html"><img src="../IMG/logo.png" alt="" style="height: 60px;"></a>
+    </div>
+    <div class="action">
+      <form action="">
+        <input type="text" placeholder="Search" required
+          style="width: 300px; height: 40px; border: 2px solid #f2f1d6; border-radius: 25px; color: #f2f1d6;" />
+        <button class="icon_submit" type="submit">
+          <img src="../IMG/icon_search.png" alt="" />
+        </button>
+      </form>
+      <a href="../HTML/shopping.html">
+        <img src="../IMG/icon_shopping.png" alt="Giỏ hàng" style="height: 50px;" />
+      </a>
+      <img src="../IMG/icon_đn.png" alt="" style="height: 50px;">
+    </div>
+  </div>
+  <div class="menu">
+    <a href="../HTML/index.html">Trang chủ |</a>
+    <div class="dropdown">
+      <a href="#">Sản phẩm ▼ |</a>
+      <div class="dropdown-content">
+        <a href="./tuiDeoCheo.html">Túi đeo chéo</a>
+        <a href="./tuiDeoVai.html">Túi đeo vai</a>
+        <a href="./tuiXachTay.html">Túi xách tay</a>
+        <a href="./viCamTay.html">Ví cầm tay</a>
+      </div>
+    </div>
+    <a href="./blog.html">Tin tức |</a>
+    <a href="./contact.html">Liên hệ |</a>
+    <a href="./sitemap.html"> Sitemap</a>
+  </div>
+  <div class="body">    
+    <h1>Túi Đeo Vai</h1>
+    <div class="container my-4">
+      <div class="row g-3" id="product-list">
+      </div>
+    </div>
+
+    <div class="footer text-center">
+      <div style="width: 90%; font-size: 19px; margin: auto;">
+        <p>Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình khuyến mãi hấp dẫn từ Website của chúng tôi. Hãy đăng ký nhận
+          bản tin để cập nhật thông tin mới nhất, các xu hướng thời trang túi xách nữ và nhận các ưu đãi đặc biệt dành
+          riêng cho thành viên của chúng tôi.</p>
+      </div>
+
+      <div class="container" style="width: 100vw;">
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <h6 style="font-weight: 600; font-size: 20px;">HỖ TRỢ KHÁCH HÀNG</h6>
+            <a href="#">Hướng dẫn mua hàng trực tuyến</a><br>
+            <a href="#">Hướng dẫn thanh toán</a><br>
+            <a href="#">Gửi yêu cầu khiếu nại</a>
+          </div>
+          <div class="col-md-4">
+            <h6 style="font-weight: 600; font-size: 20px;">CHÍNH SÁCH</h6>
+            <a href="#">Chính sách quy định chung</a><br>
+            <a href="#">Chính sách vận chuyển</a><br>
+            <a href="#">Chính sách bảo hành</a><br>
+            <a href="#">Chính sách cho doanh nghiệp</a>
+          </div>
+          <div class="col-md-4">
+            <h6 style="font-weight: 600; font-size: 20px;">THÔNG TIN KHUYẾN MÃI</h6>
+            <a href="#">Thông tin khuyến mãi</a><br>
+            <a href="#">Sản phẩm bán chạy</a><br>
+            <a href="#">Sản phẩm mới</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<script>
+
+  // Túi đeo tréo
+  const dataHome = [
+    { id: 9, title: 'TDV Hobo Nắp Gập Chain Handle', url: '/product/1', price: 983000, 
+    image: 'https://pos.nvncdn.com/be4b74-28637/ps/20240702_QJ7hjVkt1A.jpeg' },
+    { id: 10, title: 'TDV Đai Ngang C Chic', url: '/product/2', price: 839000, 
+    image: 'https://pos.nvncdn.com/be4b74-28637/ps/20231228_owqMJtFTys.jpeg' },
+    { id: 11, title: 'TDV Hobo Quai Ngắn', url: '/product/3', price: 708000, 
+    image: 'https://pos.nvncdn.com/be4b74-28637/ps/20231222_iUyPWKlmy8.jpeg' },
+    { id: 12, title: 'TDV Hobo Đáy Tròn', url: '/product/4', price: 883000, 
+    image: 'https://pos.nvncdn.com/be4b74-28637/ps/20241112_fURdjdRWjA.jpeg' },
+    { id: 135, title: 'TDV Khóa Tròn Da Mịn ', url: '/product/5', price: 783000, 
+    image: 'https://pos.nvncdn.com/be4b74-28637/ps/20240702_Ybp6YdzJkY.jpeg' },
+    { id: 14, title: 'TDV Khóa Bạc Vân Rắn', url: '/product/6', price: 894000, 
+    image: 'https://pos.nvncdn.com/be4b74-28637/ps/20230302_q6KJv3tb2VPFFKxc.jpeg' },
+    { id: 15, title: 'TDV Nắp Gập', url: '/product/7', price: 499000, 
+    image: 'https://product.hstatic.net/1000003969/product/hong-cam_txn420_55_trans_20220715151243_347f9256456_3aa1f0aa5f004315ada36ad0818486f9_master.jpeg' },
+    { id: 16, title: 'TDC Nhỏ buckled trapeze', url: '/product/8', price: 375000, 
+    image: 'https://product.hstatic.net/1000003969/product/kem_txn397_9_20240122160513_1da5dcef24954503a7a912c8edcc9d35_master.jpeg' }
+  ];
+
+  const productList = document.getElementById("product-list");
+
+  dataHome.forEach(product => {
+    const productCard = document.createElement("div");
+    productCard.className = "col-md-3";
+    productCard.innerHTML = `
+      <div class="card product-card">
+        <div class="product-image">
+          <img src="${product.image}" alt="${product.title}" class="img-fluid">
+        </div>
+        <div class="product-info">
+          <p class="product-description">${product.title}</p>
+          <p class="product-price">${product.price.toLocaleString()}₫</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-link btn-sm action-button" onclick="addToCart(${product.id})">Mua ngay</button>
+          <span class="separator"> | </span>
+          <a href="${product.url}" class="btn btn-link btn-sm action-button">Xem chi tiết</a>
+        </div>
+      </div>
+    `;
+    productList.appendChild(productCard);
+  });
+    // Hàm lưu giỏ hàng vào localStorage
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Hàm lấy giỏ hàng từ localStorage
+function getCart() {
+  const cart = localStorage.getItem("cart");
+  return cart ? JSON.parse(cart) : [];
+}
+
+// Hàm thêm sản phẩm vào giỏ hàng
+function addToCart(productId) {
+  const cart = getCart();
+  const product = dataHome.find(p => p.id === productId);
+
+  if (product) {
+    const existingProduct = cart.find(item => item.id === productId);
+
+    if (existingProduct) {
+      existingProduct.quantity += 1; // Tăng số lượng nếu sản phẩm đã có trong giỏ
+    } else {
+      cart.push({ ...product, quantity: 1 }); // Thêm sản phẩm mới vào giỏ
+    }
+
+    saveCart(cart);
+    alert("Sản phẩm đã được thêm vào giỏ hàng!");
+  } else {
+    alert("Sản phẩm không tồn tại!");
+  }
+}
+
+</script>
+
+
+</html>

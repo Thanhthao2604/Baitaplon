@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Luxurious+Script&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      background-color: #428a8e;
+      color: #f2f1d6;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* .container{
+            width: 2000px;
+            display: flex;
+            min-height: 1000px;
+            margin: 0px; 
+        } */
+    .header {
+      height: 65px;
+      display: flex;
+      padding-left: 25px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #000;
+    }
+
+    .action {
+      width: 35%;
+      display: flex;
+      padding-right: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon_submit {
+      outline: none;
+      border: 0;
+    }
+
+    .header input {
+      position: relative;
+      left: 29px;
+      top: -2px;
+    }
+
+    .icon_submit img {
+      width: 37px;
+      position: relative;
+      left: -35px;
+      top: -5px;
+      cursor: pointer;
+    }
+
+    input[type="text"]::placeholder {
+      padding-left: 15px;
+      color: #f2f1d6;
+    }
+
+    .menu,
+    .tittle {
+      background-color: #1c7075;
+      padding: 10px;
+      border-bottom: 3px solid black;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .menu a {
+      color: #f2f1d6;
+      display: flex;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 21px;
+      text-decoration: none;
+      padding: 0 15px;
+      display: inline-block;
+    }
+
+
+    .menu a:hover {
+      color: #c9b86d;
+    }
+
+    .dropdown {
+      position: relative;
+      background-color: transparent;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #317d7f;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      min-width: 160px;
+      z-index: 1;
+
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3d8c8f;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .body h1 {
+      display: flex;
+      font-family: 'Luxurious Script', cursive;
+      padding: 25px;
+      align-items: center;
+      margin: auto;
+      font-weight: 500;
+      font-size: 70px;
+      justify-content: center;
+    }
+
+    .product-card {
+      border-radius: 30px;
+      border: none;
+      margin-bottom: 5px;
+    }
+
+    .product-image {
+      height: 275px;
+      display: flex;
+      border-radius: 30px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .default-image {
+      display: block;
+      width: 100%;
+      width: 85%;
+      height: 195px;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-image {
+      width: 85%;
+      height: 195px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+    }
+
+    .product-card:hover .default-image {
+      opacity: 0;
+    }
+
+    .product-card:hover .hover-image {
+      opacity: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      background-color: #d2c8c0;
+      width: 90%;
+      border-radius: 30px !important;
+      align-items: center;
+      justify-content: center;
+      color: #737373;
+      margin: 0px 0px 10px 15px;
+    }
+
+    .footer {
+      color: #f2f1d6;
+      border-top: 3px solid black;
+      padding: 20px 10px;
+    }
+
+    .footer a {
+      color: #f2f1d6;
+      text-decoration: none;
+    }
+
+    .product-card {
+      background-color: #1c7075;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      margin: 10px 0;
+      background-color: transparent;
+    }
+
+    .product-description {
+      color: #f2f1d6;
+      background-color: transparent !important;
+      font-size: 16px;
+      margin: 5px 0;
+      font-weight: 500;
+    }
+
+    .product-price {
+      font-size: 18px;
+      color: #f2f1d6;
+      background-color: transparent !important;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      background-color: #D8C3B6;
+      padding: 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .action-button {
+      color: #737373;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    .action-button:hover {
+      color: #333;
+    }
+
+    .separator {
+      background-color: transparent;
+      color: #737373;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+
+    .img-fluid {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="container"> -->
+  <div class="header">
+    <div class="h-img"><a href="../HTML/index.html"><img src="../IMG/logo.png" alt="" style="height: 60px;"></a>
+    </div>
+    <div class="action">
+      <form action="">
+        <input type="text" placeholder="Search" required
+          style="width: 300px; height: 40px; border: 2px solid #f2f1d6; border-radius: 25px; color: #f2f1d6;" />
+        <button class="icon_submit" type="submit">
+          <img src="../IMG/icon_search.png" alt="" />
+        </button>
+      </form>
+      <a href="../HTML/shopping.html">
+        <img src="../IMG/icon_shopping.png" alt="Giỏ hàng" style="height: 50px;" />
+      </a>
+      <img src="../IMG/icon_đn.png" alt="" style="height: 50px;">
+    </div>
+  </div>
+  <div class="menu">
+    <a href="../HTML/index.html">Trang chủ |</a>
+    <div class="dropdown">
+      <a href="#">Sản phẩm ▼ |</a>
+      <div class="dropdown-content">
+        <a href="./tuiDeoCheo.html">Túi đeo chéo</a>
+        <a href="./tuiDeoVai.html">Túi đeo vai</a>
+        <a href="./tuiXachTay.html">Túi xách tay</a>
+        <a href="./viCamTay.html">Ví cầm tay</a>
+      </div>
+    </div>
+    <a href="./blog.html">Tin tức |</a>
+    <a href="./contact.html">Liên hệ |</a>
+    <a href="./sitemap.html"> Sitemap</a>
+
+  </div>
+  <div class="body">
+    <section class="main-map" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <!-- Phần chọn cửa hàng và danh sách địa chỉ -->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 system_store">
+
+    
+                    <!-- Danh sách địa chỉ cửa hàng -->
+                    <div class="wrapper-dropdown list-store">
+                        <ul class="all-submenu-1">
+                            <li data-depotid="1830" class="sub-item1" data-name="THANH HOÁ 2 - 125 Lê Hoàn" data-address="125 Lê Hoàn, Phường Lam Sơn, TP Thanh Hoá" data-lat="19.806636" data-long="105.779343">
+                                <a class="btn"><b>THANH HOÁ 2 - 125 Lê Hoàn:</b> 125 Lê Hoàn, Phường Lam Sơn, TP Thanh Hoá</a>
+                                <p>Số điện thoại: <b>18009245</b></p>
+                            </li>
+                            <li data-depotid="1833" class="sub-item1" data-name="THANH HÓA 1 - 49 Lê Hữu Lập" data-address="49 Lê Hữu Lập, TP Thanh Hóa, Thanh Hoá" data-lat="19.804594" data-long="105.77982">
+                                <a class="btn"><b>THANH HÓA 1 - 49 Lê Hữu Lập:</b> 49 Lê Hữu Lập, TP Thanh Hóa, Thanh Hoá</a>
+                                <p>Số điện thoại: <b>18009245</b></p>
+                            </li>
+                            <li data-depotid="1835" class="sub-item1" data-name="BÌNH ĐỊNH - 265 Ngô Gia Tự" data-address="265 Ngô Gia Tự, TT. Bình Định, An Nhơn, Bình Định" data-lat="13.889104" data-long="109.113715">
+                                <a class="btn"><b>BÌNH ĐỊNH - 265 Ngô Gia Tự:</b> 265 Ngô Gia Tự, TT. Bình Định, An Nhơn, Bình Định</a>
+                                <p>Số điện thoại: <b>18009245</b></p>
+                            </li>
+                            <li data-depotid="2913" class="sub-item1" data-name="HÀ NỘI - 108C2 Phạm Ngọc Thạch" data-address="108 C2 Phạm Ngọc Thạch, Phường Trung Tự, Quận Đống Đa, Hà Nội">
+                                <a class="btn"><b>HÀ NỘI - 108C2 Phạm Ngọc Thạch:</b> 108 C2 Phạm Ngọc Thạch, Phường Trung Tự, Quận Đống Đa, Hà Nội</a>
+                                <p>Số điện thoại: <b>18009245</b></p>
+                            </li>
+                            <li data-depotid="3812" class="sub-item1" data-name="HẢI PHÒNG - 79 Lê Lợi" data-address="79 P. Lê Lợi Máy Tơ, Ngô Quyền, Hải Phòng" data-lat="20.8582654" data-long="106.690138">
+                                <a class="btn"><b>HẢI PHÒNG - 79 Lê Lợi:</b> 79 P. Lê Lợi Máy Tơ, Ngô Quyền, Hải Phòng</a>
+                                <p>Số điện thoại: <b>18009245</b></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Phần bản đồ -->
+                <div class="col-lg-9 col-md-9 col-sm-12 map centerMap">
+                    <div class="mapDetails">
+                        <iframe id="map-canvas" width="100%" height="600" frameborder="0" scrolling="no" src="https://maps.google.com/maps?hl=vi&q=125%20L%C3%AA%20Ho%C3%A0n,%20Ph%C6%B0%E1%BB%9Dng%20Lam%20S%C6%A1n,%20TP%20Thanh%20Ho%C3%A1&t=satellite&z=17&output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+  </div>
+
+    <div class="footer text-center">
+        <div style="width: 90%; font-size: 19px; margin: auto;">
+          <p>Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình khuyến mãi hấp dẫn từ Website của chúng tôi. Hãy đăng ký nhận
+            bản tin để cập nhật thông tin mới nhất, các xu hướng thời trang túi xách nữ và nhận các ưu đãi đặc biệt dành
+            riêng cho thành viên của chúng tôi.</p>
+        </div>
+  
+        <div class="container" style="width: 100vw;">
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <h6 style="font-weight: 600; font-size: 20px;">HỖ TRỢ KHÁCH HÀNG</h6>
+              <a href="#">Hướng dẫn mua hàng trực tuyến</a><br>
+              <a href="#">Hướng dẫn thanh toán</a><br>
+              <a href="#">Gửi yêu cầu khiếu nại</a>
+            </div>
+            <div class="col-md-4">
+              <h6 style="font-weight: 600; font-size: 20px;">CHÍNH SÁCH</h6>
+              <a href="#">Chính sách quy định chung</a><br>
+              <a href="#">Chính sách vận chuyển</a><br>
+              <a href="#">Chính sách bảo hành</a><br>
+              <a href="#">Chính sách cho doanh nghiệp</a>
+            </div>
+            <div class="col-md-4">
+              <h6 style="font-weight: 600; font-size: 20px;">THÔNG TIN KHUYẾN MÃI</h6>
+              <a href="#">Thông tin khuyến mãi</a><br>
+              <a href="#">Sản phẩm bán chạy</a><br>
+              <a href="#">Sản phẩm mới</a>
+            </div>
+          </div>
+        </div>
+  </div>
+</body>
+
+
+</html>

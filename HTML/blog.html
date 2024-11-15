@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Luxurious+Script&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      background-color: #428a8e;
+      color: #f2f1d6;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* .container{
+            width: 2000px;
+            display: flex;
+            min-height: 1000px;
+            margin: 0px; 
+        } */
+    .header {
+      height: 65px;
+      display: flex;
+      padding-left: 25px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #000;
+    }
+
+    .action {
+      width: 35%;
+      display: flex;
+      padding-right: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon_submit {
+      outline: none;
+      border: 0;
+    }
+
+    .header input {
+      position: relative;
+      left: 29px;
+      top: -2px;
+    }
+
+    .icon_submit img {
+      width: 37px;
+      position: relative;
+      left: -35px;
+      top: -5px;
+      cursor: pointer;
+    }
+
+    input[type="text"]::placeholder {
+      padding-left: 15px;
+      color: #f2f1d6;
+    }
+
+    .menu,
+    .tittle {
+      background-color: #1c7075;
+      padding: 10px;
+      border-bottom: 3px solid black;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .menu a {
+      color: #f2f1d6;
+      display: flex;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 21px;
+      text-decoration: none;
+      padding: 0 15px;
+      display: inline-block;
+    }
+
+
+    .menu a:hover {
+      color: #c9b86d;
+    }
+
+    .dropdown {
+      position: relative;
+      background-color: transparent;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #317d7f;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      min-width: 160px;
+      z-index: 1;
+
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3d8c8f;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .container table tr,
+    .container table a, 
+    .container table p, 
+    .container table span{
+        background-color: #0c4043 ;
+    }
+
+    
+
+    .footer {
+      color: #f2f1d6;
+      border-top: 3px solid black;
+      padding: 20px 10px;
+    }
+
+    .footer a {
+      color: #f2f1d6;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- <div class="container"> -->
+  <div class="header">
+    <div class="h-img"><a href="../HTML/index.html"><img src="../IMG/logo.png" alt="" style="height: 60px;"></a>
+    </div>
+    <div class="action">
+      <form action="">
+        <input type="text" placeholder="Search" required
+          style="width: 300px; height: 40px; border: 2px solid #f2f1d6; border-radius: 25px; color: #f2f1d6;" />
+        <button class="icon_submit" type="submit">
+          <img src="../IMG/icon_search.png" alt="" />
+        </button>
+      </form>
+      <a href="../HTML/shopping.html">
+        <img src="../IMG/icon_shopping.png" alt="Giỏ hàng" style="height: 50px;" />
+      </a>
+      <img src="../IMG/icon_đn.png" alt="" style="height: 50px;">
+    </div>
+  </div>
+  <div class="menu">
+    <a href="../HTML/index.html">Trang chủ |</a>
+    <div class="dropdown">
+      <a href="#">Sản phẩm ▼ |</a>
+      <div class="dropdown-content">
+        <a href="./tuiDeoCheo.html">Túi đeo chéo</a>
+        <a href="./tuiDeoVai.html">Túi đeo vai</a>
+        <a href="./tuiXachTay.html">Túi xách tay</a>
+        <a href="./viCamTay.html">Ví cầm tay</a>
+        
+      </div>
+    </div>
+    <a href="./blog.html">Tin tức |</a>
+    <a href="./contact.html">Liên hệ |</a>
+    <a href="./sitemap.html"> Sitemap</a>
+  </div>
+  <div class="wrapper">
+    <!-- News and Events Section -->
+    <h1 style="margin:auto;">BLOGS</h1>
+
+    <div class="container w-100 mt-5" style="font-size: 15px;">
+        <div class="row">
+            <div class="col-sm-8 col-12">
+                <h5 style="opacity: 0.5;">Hãy cập nhật tin tức, sự kiện, hình ảnh, video clip hot nhất 24h về TÚI XÁCH NỮ</h5>
+                <table class="table">
+                    <tr>
+                        <td class="w-25">
+                            <a href="https://www.charleskeith.vn/vn/press/fall-winter-campaign.html">
+                                <img width="100%" decoding="async" loading="lazy" alt="Gợi ý thời trang" class="" src="https://www.charleskeith.vn/on/demandware.static/-/Library-Sites-CharlesKeithVN/default/dwcde6c1b5/images/Muse/Fall24/fall-campaign/landing/charles-keith-fall-24-blog-1-cover.jpg"></a>
+                        </td>
+                        <td class="w-75" >
+                            <div class="box" style="background-color: #0c4043 ;">
+                                <a href="https://www.charleskeith.vn/vn/press/fall-winter-campaign.html" class="nav-link">
+                                    <p class="ms-3 fw-bold fs-5">BỘ SƯU TẬP THU ĐÔNG 2024 <br></p>
+                                    <p style="font-size: 18px;">Bộ sưu tập Thu Đông 2024 của CHARLES & KEITH khám phá sự cân bằng giữa nét tinh tế và nổi bật, bằng cách kết hợp phong cách vượt thời gian từ những chi tiết ấn tượng. </p>
+                                </a>
+                                <span class="ms-3" style="opacity: 0.5; line-height: 10px;">Thời trang 14/03/2024</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-25">
+                            <a href="https://www.saostar.vn/thoi-trang/sanh-dieu-nhu-gai-han-phai-tia-ngay-3-phu-kien-dat-gia-trong-ngay-8-3-202203071122078383.html">
+                                <img width="100%" decoding="async" loading="lazy" alt="Gợi ý thời trang" class="" src="https://www.charleskeith.vn/on/demandware.static/-/Library-Sites-CharlesKeithVN/default/dweb205b05/images/Muse/Spring24/chetlo-ph5/charles-keith-spring-24-fw-chetlo-ph5-blog-cover.jpg"></a>
+                        </td>
+                        <td class="w-75">
+                            <div class="box" style="background-color: #0c4043 ;">
+                                <a href="https://www.saostar.vn/thoi-trang/sanh-dieu-nhu-gai-han-phai-tia-ngay-3-phu-kien-dat-gia-trong-ngay-8-3-202203071122078383.html" class="nav-link">
+                                    <p class="ms-3 fw-bold fs-5">CHARLES & KEITH TẠI TUẦN LỄ THỜI TRANG: THU ĐÔNG 2024 <br></p>
+                                    <p style="font-size: 18px;">Xuất hiện trên sàn diễn của Tuần lễ thời trang London và New York</p>
+                                    
+                                </a>
+                                <span class="ms-3" style="opacity: 0.5;">Thời trang 14/03/2024</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-25">
+                            <a href="https://www.saostar.vn/thoi-trang/tai-sao-phu-nu-hoang-gia-luon-cam-theo-tui-xach-20210105204841910.html">
+                                <img width="100%" decoding="async" loading="lazy" alt="Gợi ý thời trang" class="" src="https://www.charleskeith.vn/on/demandware.static/-/Library-Sites-CharlesKeithVN/default/dw80279b56/images/Muse/Fall23/fall-bag-trends/charles-keith-fall-23-trends-blog-cover.jpg"></a>
+                        </td>
+                        <td class="w-75">
+                            <div class="box" style="background-color: #0c4043 ;">
+                                <a href="https://www.saostar.vn/thoi-trang/tai-sao-phu-nu-hoang-gia-luon-cam-theo-tui-xach-20210105204841910.html" class="nav-link">
+                                    <p class="ms-3 fw-bold fs-5">MÙA THU 2023: SỰ CÂN BẰNG GIỮA THIẾT KẾ VÀ TÍNH ỨNG DỤNG</p>
+                                    <p style="font-size: 18px;">Từ những chiếc túi to với chi tiết gấp nhún, đến những chiếc túi góc cạnh và đầy nữ tính, tất cả sẽ làm cho bạn luôn tự hào mang bên </p>
+                                </a>
+                                <span class="ms-3" style="opacity: 0.5;">Thời trang 16/03/2023</psan>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-25">
+                            <a href="https://kenh14.vn/tui-no-thong-tri-xu-huong-nhin-thu-vi-the-nao-ma-lay-long-duoc-han-so-hee-va-jennie-2024031820552875.chn">
+                                <img width="100%" decoding="async" loading="lazy" alt="Gợi ý thời trang" class="" src="https://www.charleskeith.vn/on/demandware.static/-/Library-Sites-CharlesKeithVN/default/dwcbbad6d5/images/Muse/Fall23/quiet-luxury/charles-keith-editorial-studio-quiet-luxury-blog-cover.jpg"></a>
+                        </td>
+                        <td class="w-75">
+                            <div class="box" style="background-color: #0c4043 ;">
+                                <a href="https://kenh14.vn/tui-no-thong-tri-xu-huong-nhin-thu-vi-the-nao-ma-lay-long-duoc-han-so-hee-va-jennie-2024031820552875.chn" class="nav-link">
+                                    <p class="ms-3 fw-bold fs-5">ĐƠN GIẢN TINH TẾ: NHỮNG ĐIỂM NHẤN THỜI TRANG MÙA THU</p>
+                                    <p style="font-size: 18px;">Mùa thu này, hãy lấp đầy tủ đồ với những phụ kiện tối giản nhưng đầy tinh tế sẽ tạo điểm nhấn cho vẻ ngoài thanh lịch của bạn.</p>
+
+                                </a>
+                                <span class="ms-3" style="opacity: 0.5;">Thời trang 16/02/2024</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-25">
+                            <a href="https://kenh14.vn/4-mau-tui-xach-tien-loi-thoi-trang-ban-co-the-mang-di-choi-va-di-du-lich-20231113094749296.chn">
+                                <img width="100%" decoding="async" loading="lazy" alt="Gợi ý thời trang" class="" src="https://www.charleskeith.vn/on/demandware.static/-/Library-Sites-CharlesKeithVN/default/dwb7f765c1/images/Muse/Fall24/fall-campaign/collection/charles-keith-fall-24-blog-3-cover.jpg"></a>
+                        </td>
+                        <td class="w-75">
+                            <div class="box" style="background-color: #0c4043 ;">
+                                <a href="https://kenh14.vn/4-mau-tui-xach-tien-loi-thoi-trang-ban-co-the-mang-di-choi-va-di-du-lich-20231113094749296.chn" class="nav-link">
+                                    <p class="ms-3 fw-bold fs-5">Mua Sắm BST Thu Đông 2024</p>
+                                    <p style="font-size: 18px;">Gặp gỡ những ngôi sao của bộ sưu tập mùa Thu mới nhất của chúng tôi</p>
+
+                                </a>
+                                <span class="ms-3" style="opacity: 0.5;">Thời trang 16/02/2024</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4 col-12">
+                <img src="https://pic.pikbest.com/00/94/96/45b888piCPK5.jpg!sw800" style="padding-top: 32px;" width="300" height="600" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer text-center">
+      <div style="width: 90%; font-size: 19px; margin: auto;">
+        <p>Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình khuyến mãi hấp dẫn từ Website của chúng tôi. Hãy đăng ký nhận
+          bản tin để cập nhật thông tin mới nhất, các xu hướng thời trang túi xách nữ và nhận các ưu đãi đặc biệt dành
+          riêng cho thành viên của chúng tôi.</p>
+      </div>
+
+      <div class="container" style="width: 100vw;">
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <h6 style="font-weight: 600; font-size: 20px;">HỖ TRỢ KHÁCH HÀNG</h6>
+            <a href="#">Hướng dẫn mua hàng trực tuyến</a><br>
+            <a href="#">Hướng dẫn thanh toán</a><br>
+            <a href="#">Gửi yêu cầu khiếu nại</a>
+          </div>
+          <div class="col-md-4">
+            <h6 style="font-weight: 600; font-size: 20px;">CHÍNH SÁCH</h6>
+            <a href="#">Chính sách quy định chung</a><br>
+            <a href="#">Chính sách vận chuyển</a><br>
+            <a href="#">Chính sách bảo hành</a><br>
+            <a href="#">Chính sách cho doanh nghiệp</a>
+          </div>
+          <div class="col-md-4">
+            <h6 style="font-weight: 600; font-size: 20px;">THÔNG TIN KHUYẾN MÃI</h6>
+            <a href="#">Thông tin khuyến mãi</a><br>
+            <a href="#">Sản phẩm bán chạy</a><br>
+            <a href="#">Sản phẩm mới</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+
+
+</html>
