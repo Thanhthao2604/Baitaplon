@@ -165,7 +165,9 @@
 </div>
 
 <div id="cart-total" class="mt-4" style="border-top: 3px solid #000; padding: 20px 200px 20px; text-align: right !important; "></div>
-
+<div id="payment" class="text-end mt-3">
+        <button class="btn btn-success" onclick="proceedToCheckout()">Thanh toán</button>
+      </div>
     <div class="footer text-center">
         <div style="width: 90%; font-size: 19px; margin: auto;">
           <p>Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình khuyến mãi hấp dẫn từ Website của chúng tôi. Hãy đăng ký nhận
@@ -274,6 +276,54 @@
         }
     
         displayCart();
+
+        function proceedToCheckout() {
+  const cart = getCart();
+  if (cart.length === 0) {
+    alert("Giỏ hàng của bạn đang trống. Hãy thêm sản phẩm trước khi thanh toán.");
+    return;
+  }
+  
+  // Chuyển hướng đến trang thanh toán hoặc xử lý thanh toán
+  alert("Bạn đã sẵn sàng thanh toán. Chức năng này đang được phát triển.");
+}
+function displayCart() {
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const payment = document.getElementById("payment");
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Giỏ hàng của bạn đang trống!</p>";
+    cartTotal.innerHTML = "";
+    payment.style.display = "none"; // Ẩn nút thanh toán
+    return;
+  }
+
+  let total = 0;
+  cartItems.innerHTML = cart.map(item => {
+    total += item.price * item.quantity;
+    return `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.title}">
+        <div>
+          <p>${item.title}</p>
+          <p>${item.price.toLocaleString()}₫</p>
+          <div class="quantity-control">
+            <button onclick="updateQuantity(${item.id}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button onclick="updateQuantity(${item.id}, 1)">+</button>
+          </div>
+        </div>
+        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})">Xóa</button>
+      </div>
+    `;
+  }).join("");
+
+  cartTotal.innerHTML = `<h4>Tổng cộng: ${total.toLocaleString()}₫</h4>`;
+  payment.style.display = "block"; // Hiển thị nút thanh toán
+}
+
       </script></body>
 
 </html>
